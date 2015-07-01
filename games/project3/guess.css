@@ -1,0 +1,12 @@
+
+body {	color: white;
+	font-family: Tempus Sans ITC;
+	text-align:center;
+	background-image: url("wood.gif");
+	font-size: 30px; }
+
+h1 {	font-size:75px;
+	font-family: Small Fonts;}
+
+a:link	{color:white}
+a:visited{color:#D2B9D3}

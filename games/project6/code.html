@@ -1,0 +1,314 @@
+<!-- athena's html stickman game -->
+<!-- I put in a little cheat that helped me test the code. when you click on the space right under the "start game" button (use Ctrl+A to help you find the exact spot), the right word appears in the "guess the real word" textbox. however, if you haven't pressed the start button yet, it shows up as undefined..-->
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="stick.css">
+<title>Stickman!</title>
+<script language=Javascript>
+	//generates a random number from 1-23
+	var vrandom=(Math.round(Math.random()*22+1))
+	
+	//the words that will be used for the game
+	var vword=new Array ("STORM","STORE","BLIZZARD","SNOW","THUNDER","TORNADO","HURRICANE","TYPHOON","MULAN","LIGHTNING","EARTHQUAKE","FLOOD","VOLCANO","FIRE","SUN","MANGO","GUAVA","GRAPE","APPLE","PI","JAZZ","MUSIC","FLUTE")
+
+	//the words in a hidden form
+	var va=new Array("*****","*****","********","****","*******","*******","*********","*******","*****","*********","**********","*****","*******","****","***","*****","*****","*****","*****","**","****","*****","*****")
+
+	//the pictures
+	var vpics=new Array("0","1","2","3","4","5","6")
+
+	//the random word
+	var vrword
+	var vra
+	
+	//the number of times the user has guessed
+	var vwguessed=0
+	var vguessed=0
+	var vwin=0
+	var vlose=0
+	var vgame=0
+
+	var output="<html><head><link rel=stylesheet type=text/css href=stick.css></head><body><form name=frmimg><img src=0.jpg name=imgman>"
+
+	var hiddenarray=new Array()
+
+	//generates a random word. 
+	//frw stands for function random word
+	function frw(frmTemp)
+	{
+		frmTemp.bguess.disabled=false
+		frmTemp.breset.disabled=false
+		frmTemp.bnew.disabled=false
+		frmTemp.A.disabled=false
+		frmTemp.B.disabled=false
+		frmTemp.C.disabled=false
+		frmTemp.D.disabled=false
+		frmTemp.E.disabled=false
+		frmTemp.F.disabled=false
+		frmTemp.G.disabled=false
+		frmTemp.H.disabled=false
+		frmTemp.I.disabled=false
+		frmTemp.J.disabled=false
+		frmTemp.K.disabled=false
+		frmTemp.L.disabled=false
+		frmTemp.M.disabled=false
+		frmTemp.N.disabled=false
+		frmTemp.O.disabled=false
+		frmTemp.P.disabled=false
+		frmTemp.Q.disabled=false
+		frmTemp.R.disabled=false
+		frmTemp.S.disabled=false
+		frmTemp.T.disabled=false
+		frmTemp.U.disabled=false
+		frmTemp.V.disabled=false
+		frmTemp.W.disabled=false
+		frmTemp.X.disabled=false
+		frmTemp.Y.disabled=false
+		frmTemp.Z.disabled=false
+		
+		vrandom=(Math.round(Math.random()*22+1))
+		
+		for(i=0;i<va.length;i++)
+		{
+			vrword=vword[vrandom]
+			vra=va[vrandom]
+		}
+
+		frmTemp.txtaw.value=vra
+
+		hiddenarray=vra.split("")
+	}
+
+	// the reset code used whenever the user either wins or loses, instead of copying and paste-ing everytime
+	function frestart(frmTemp)
+	{
+		var vconfirm1=window.confirm("Would you like to start the next round?")
+
+		if(vconfirm1)
+		{
+			vrandom=(Math.round(Math.random()*22+1))
+		
+			for(i=0;i<va.length;i++)
+			{
+				vrword=vword[vrandom]
+				vra=va[vrandom]
+			}
+
+		frmTemp.txtaw.value=vra
+		frmTemp.txtguessword.value=""
+
+		frmTemp.A.disabled=false
+		frmTemp.B.disabled=false
+		frmTemp.C.disabled=false
+		frmTemp.D.disabled=false
+		frmTemp.E.disabled=false
+		frmTemp.F.disabled=false
+		frmTemp.G.disabled=false
+		frmTemp.H.disabled=false
+		frmTemp.I.disabled=false
+		frmTemp.J.disabled=false
+		frmTemp.K.disabled=false
+		frmTemp.L.disabled=false
+		frmTemp.M.disabled=false
+		frmTemp.N.disabled=false
+		frmTemp.O.disabled=false
+		frmTemp.P.disabled=false
+		frmTemp.Q.disabled=false
+		frmTemp.R.disabled=false
+		frmTemp.S.disabled=false
+		frmTemp.T.disabled=false
+		frmTemp.U.disabled=false
+		frmTemp.V.disabled=false
+		frmTemp.W.disabled=false
+		frmTemp.X.disabled=false
+		frmTemp.Y.disabled=false
+		frmTemp.Z.disabled=false
+		vwguessed=0
+		vguessed=0
+		frmTemp.txtwguess.value=vwguessed
+		frmTemp.txtguess.value=vguessed
+		frmTemp.txtwin.value=vwin
+		frmTemp.txtlose.value=vlose
+		frmTemp.txtall.value=vgame
+			parent.framepic.document.write(output)
+			parent.framepic.document.close()
+
+		hiddenarray=vra.split("")
+
+frmTemp.txt.value=vrword
+		}
+
+		else
+		{
+			window.location.reload()
+
+//why doesnt it reset the page everytime..
+			parent.framepic.document.write(output)
+			parent.framepic.document.close()
+		} 
+	}
+
+	//function that checks the guessed LETTER against the letters of the real word
+	function fguessl(frmTemp,tmpArray,letter)
+	{
+		vguessed=vguessed+1
+		frmTemp.txtguess.value=vguessed
+		var vyes=false
+
+		var vlength=vra.length
+
+		if(vwguessed<6)
+		{
+			for(i=0;i<vlength;i++)
+			{
+				if(vrword.charAt(i)==letter)
+				{
+					hiddenarray[i]=letter
+					vyes=true
+				}
+			}
+			
+			vra=hiddenarray.join("")
+			frmTemp.txtaw.value=vra
+
+			if(!vyes)
+			{
+				vwguessed=vwguessed+1
+				frmTemp.txtwguess.value=vwguessed
+
+				//picture change.
+				for(i=0;i<6;i++)
+				{
+					if(vwguessed==[i])
+					{
+					window.parent.framepic.frmimg.imgman.src=tmpArray[vwguessed]+".jpg"
+					}
+				}
+				
+				if(vwguessed==6)
+				{
+					alert("sorry, you guessed too many wrong letters. The word was actually \""+vrword+"\"), so you lose this round...")
+		
+					vgame=vgame+1
+					vlose=vlose+1
+
+					window.parent.framepic.frmimg.imgman.src="6.jpg"
+					frestart(frmTemp)
+				}
+			}
+		}
+
+		if(vra==vrword)
+		{
+			alert("YOU GUESSED RIGHT!")
+
+			vgame=vgame+1
+			vwin=vwin+1
+
+			frestart(frmTemp)
+		}
+	}
+
+	//function that checks the guessed WORD against the real word and sees if they match
+	function fguessw(frmTemp)
+	{
+		if(frmTemp.txtguessword.value.toUpperCase()==vrword)
+		{
+			alert("YOU GUESSED RIGHT!")
+
+			vgame=vgame+1
+			vwin=vwin+1
+
+			frestart(frmTemp)
+		}
+
+		else
+		{
+			alert("sorry, wrong word (the word was actually \""+vrword+"\"), so you lose this round...")
+
+			vgame=vgame+1
+			vlose=vlose+1
+
+			frestart(frmTemp)
+		}	
+	}
+
+	//this function actually doesn't really clear the variables and the form. i tried it in a different way, by refreshing the page instead (i got this idea from the fremd's emergency snow day page haha)
+	function freset()
+	{
+		var vconfirm=window.confirm("Are you sure you want to restart the game?")
+
+		if(vconfirm)
+		{
+			window.location.reload()
+
+//why doesnt it reset the page everytime..
+			parent.framepic.document.write(output)
+			parent.framepic.document.close()
+		}
+
+		else
+		{
+			return false
+		} 
+	}
+</script>
+</head>
+<body><center>
+<h2 onClick="window.open('info.html','_blank','width=400,height=400,toolbar=no,menubar=no,scrollbars=no,resizable=no,status=no,titlebar=no')" onMouseover="style.textDecoration='underline';style.fontStyle='italic';style.cursor='hand'" onMouseout="style.textDecoration='none'">STICKMAN!</h2>
+<form name=frmstick>
+<input type=button value="Start game" name=bstart onClick="frw(frmstick);this.disabled=true">
+<br>
+
+<img src=0.jpg name=imgcheat onClick="frmstick.txtguessword.value=vrword">
+
+<br>
+<input type=text name=txtaw maxlength=0 size=10>
+<br><br>
+	<input type=button name="A" value=A disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'A')">
+	<input type=button name="B" value=B disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'B')">
+	<input type=button name="C" value=C disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'C')">
+	<input type=button name="D" value=D disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'D')">
+	<input type=button name="E" value=E disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'E')">
+	<input type=button name="F" value=F disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'F')">
+	<input type=button name="G" value=G disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'G')">
+	<input type=button name="H" value=H disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'H')">
+	<input type=button name="I" value=I disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'I')">
+	<input type=button name="J" value=J disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'J')">
+	<input type=button name="K" value=K disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'K')">
+	<input type=button name="L" value=L disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'L')">
+	<input type=button name="M" value=M disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'M')">
+	<input type=button name="N" value=N disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'N')">
+	<input type=button name="O" value=O disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'O')">
+	<input type=button name="P" value=P disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'P')">
+	<input type=button name="Q" value=Q disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'Q')">
+	<input type=button name="R" value=R disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'R')">
+	<input type=button name="S" value=S disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'S')">
+	<input type=button name="T" value=T disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'T')">
+	<input type=button name="U" value=U disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'U')">
+	<input type=button name="V" value=V disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'V')">
+	<input type=button name="W" value=W disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'W')">
+	<input type=button name="X" value=X disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'X')">
+	<input type=button name="Y" value=Y disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'Y')">
+	<input type=button name="Z" value=Z disabled=true onClick="this.disabled=true;fguessl(frmstick,vpics,'Z')">
+<br>
+<br>
+<input type=text name=txtguessword>
+<br><input type=button name=bguess value="Guess word" disabled=true onClick="fguessw(frmstick)">
+<br><br>
+<input type=button name=bnew value="New word" disabled=true onClick="frw(frmstick);vlose=vlose+1;frmstick.txtlose.value=vlose">
+<br>
+<br>
+Number of Wrong Guesses:<input type=text name=txtwguess size=4 maxlength=0>
+<br>
+Number of Guesses:<input type=text name=txtguess size=4 maxlength=0>
+<br>
+Number of Wins:<input type=text name=txtwin size=4 maxlength=0>
+<br>
+Number of Losses:<input type=text name=txtlose size=4 maxlength=0>
+<br>
+Number of Games:<input type=text name=txtall size=4 maxlength=0>
+<br>
+<br>
+<input type=button name=breset value="Start over" disabled=true onClick="freset(frmstick)">

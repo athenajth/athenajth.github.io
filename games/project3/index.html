@@ -1,0 +1,129 @@
+<!--made by athena-->
+
+<html>
+<head>
+<title>Guessing Game</title>
+<link rel=stylesheet type=text/css href="guess.css">
+<script language=Javascript>
+	var vrandomnumber=(Math.round(Math.random()*100))
+	var vcountround=0
+	var vcountwon=0
+	var vcountguess=0
+	var vaverage=0	
+	var vclicked=0
+
+	function fkey(frmTemp)
+	{frmTemp.txtguess.focus()
+		if(window.event.ENTER)
+		{
+		fguess(frmTemp)
+		}
+	}
+
+	function fguess(frmTemp)
+	{
+	vcountguess=vcountguess+1;
+	frmgame.txtng.value=vcountguess;
+	vclicked=vclicked+1
+	
+	if(vrandomnumber>frmTemp.txtguess.value)
+	{	alert("You need to guess higher");
+			frmTemp.txtguess.focus();
+	}
+	else if(vrandomnumber<frmTemp.txtguess.value)
+	{	alert("Guess a lower number");
+			frmTemp.txtguess.focus();
+	}
+	else if(vrandomnumber==frmTemp.txtguess.value)
+	{ 	alert("YOU WIN!!!")
+			vcountwon=vcountwon+1;
+			frmTemp.txtnrw.value=vcountwon;
+			
+			vcountround=vcountround+1;
+			frmTemp.txtnr.value=vcountround;
+			
+			vaverage=eval(frmTemp.txtng.value);
+			vaverage=(vaverage+eval(frmTemp.txtaver.value))/vcountwon;
+			frmTemp.txtaver.value=vaverage;
+
+			vrandomnumber=(1+Math.round(Math.random()*100));
+			vcountguess=0
+			frmTemp.txtng.value=vcountguess;
+			vclicked=0
+	}
+	else
+	{	alert("invalid entry");
+		frmTemp.txtguess.focus();
+	}
+	if (vclicked==9)
+	{	alert("You lost this round of the guessing game because you already guessed 10 times. Try harder next time ^^");
+
+		vcountround=vcountround+1;
+		frmTemp.txtnr.value=vcountround;
+
+		vcountguess=0
+		frmTemp.txtng.value=vcountguess;
+		vclicked=0
+
+		vrandomnumber=(1+Math.round(Math.random()*100));
+	}
+	}
+
+	//This function resets the whole game with a confirm box.
+	function freset(frmTemp)
+	{
+	var vconfirm=window.confirm("Are you sure you want to restart the game?")
+
+	if(vconfirm)
+	{
+		vcountround=0
+		vcountwon=0
+		vcountguess=0
+		vaverage=0	
+		vclicked=0
+		frmTemp.reset()
+		
+	}
+ 	else
+	{
+	return false
+	}
+	}
+	
+
+</script>
+</head>
+<body>
+<form name=frmgame size=50px>
+<center>
+<h1>GUESSING GAME</h1>
+<!--The start button is just for decoration to make it look more 'game-like', it doesn't actually do anything-->
+<input type=button name=bstart value=START onClick="bstart.disabled=true;">
+<br>
+<a href="info.html">Click here for instructions</a>
+<br>
+<br>
+<input type=text name=txtguess size=3 maxlength=3 onFocus="value=''" onKeyPress="fkey(frmgame)">
+<input type=button name=bguess value=GUESS onClick="fguess(frmgame)">
+<br>
+<br>
+Number of guesses:<input type=text name=txtng maxlength=0 size=2 value=0>
+<br>
+Number of rounds played:<input type=text name=txtnr maxlength=0 size=3 value=0>
+<br>
+Number of rounds won:<input type=text name=txtnrw maxlength=0 size=3 value=0>
+<br>
+Average number of guesses to win:<input type=text name=txtaver maxlength=0 size=3 value=0>
+<br>
+<br>
+<input type=button name=brestart value="START OVER" onClick="freset(frmgame)">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--This button, if clicked, shows the current answer of the game-->
+<input type=button value=Answer onClick="alert(vrandomnumber);vrandomnumber=(Math.round(Math.random()*100));frmgame.bstart.disabled=false;">
