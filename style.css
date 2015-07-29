@@ -19,7 +19,7 @@ a:hover {
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	text-align:center;
 	padding:5px;
-	background-image: url("colorbar.gif");
+	background-image: url("pictures/colorbar.gif");
 	background-repeat: repeat-x; 
 }
 
