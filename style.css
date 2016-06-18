@@ -12,26 +12,40 @@ a:hover {
 	text-decoration: underline; 
 }
 
-
-#header {
-	background-color:black;
-	color:white;
+.header {
+	background-color: #1D497D;
+	color: #eeeeee;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	text-align:center;
-	padding:5px;
+	text-align: center;
+	padding: 5px;
 	background-image: url("pictures/colorbar.gif");
 	background-repeat: repeat-x; 
 }
 
-#nav {
-	line-height:30px;
-	background-color:#eeeeee;
-	text-align:center;
-	word-spacing: 20px; 
-	padding:5px;	      
+nav {
+	list-style-type: none; 
+	background-color: #778899;	/*lightslategray*/
+	text-align: right;
+	margin: 0; 
+	padding: 0;
 }
 
-#side {
+.nav_element {
+	display: inline;
+	line-height: 30px;
+	text-align: center;
+	padding: 5px;	      
+}
+
+nav a {
+	display: block;
+}
+
+nav a:hover {
+	background-color: #708090;	/*slategray*/
+}
+
+.side {
 	background-color:#eee0ee;
     	height:300px; 
     	width:100px;
@@ -40,12 +54,24 @@ a:hover {
 	text-align:center;
 }
 
-#section {
+.section {
 	text-align:center;
 	padding:15px;	 	 
 }
 
-#footer {
+.sectionA {
+	text-align:center;
+	padding:15px;	 
+	background-color:#F0F8FF; /*aliceblue*/	 
+}
+
+.sectionB {
+	text-align:center;
+	padding:15px;
+	background-color:black; /**/	 	 
+}
+
+.footer {
 	background-color:black;
 	color:white;
 	clear:both;
