@@ -23,34 +23,41 @@ a:hover {
 }
 
 nav {
-	list-style-type: none; 
+	/*list-style-type: none; */
 	background-color: #778899;	/*lightslategray*/
+	font-weight: bold; 
 	text-align: right;
+	border-top: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;
 	margin: 0; 
 	padding: 0;
 }
 
 .nav_element {
 	display: inline;
-	line-height: 30px;
+	border-left: 1px solid #000000;
+	font-size: large; 
+	line-height: 35px;
 	text-align: center;
 	padding: 5px;	      
 }
 
-nav a {
+.nav_element a {
 	display: block;
+	color: #F0FFFF;		/*azure*/
 }
 
-nav a:hover {
+.nav_element a:hover {
 	background-color: #708090;	/*slategray*/
 }
 
 .side {
 	background-color:#eee0ee;
-    	height:300px; 
-    	width:100px;
-    	float:left;
-    	padding:5px; 
+	height:300px; 
+	width:100px;
+	float:left;
+	padding:5px; 
 	text-align:center;
 }
 
@@ -59,13 +66,13 @@ nav a:hover {
 	padding:15px;	 	 
 }
 
-.sectionA {
+.sectionText {
 	text-align:center;
 	padding:15px;	 
 	background-color:#F0F8FF; /*aliceblue*/	 
 }
 
-.sectionB {
+.sectionPic {
 	text-align:center;
 	padding:15px;
 	background-color:black; /**/	 	 
