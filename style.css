@@ -52,6 +52,10 @@ nav {
 	background-color: #708090;	/*slategray*/
 }
 
+/*.fieldHidden {
+	display: none;
+}*/
+
 .side {
 	background-color:#eee0ee;
 	height:300px; 
