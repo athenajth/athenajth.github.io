@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-	// $('.fieldHidden').hide(); 
+	$('.fieldHidden').hide(); 
 
-	$('fieldset').click(function() {
+	$(".clickMe").click(function() {
 		$(this).find('.fieldHidden').slideToggle('slow'); 
 	}); 
 
