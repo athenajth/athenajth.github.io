@@ -2,7 +2,7 @@
 
 :root {
 	--main-bg-color: #10335B; 		/*black-blue*/
-	--main-title-color: #F0F8FF; 	/*alice-blue*/
+	--main-title-color: #AAB5C0; 	/*alice-blue*/F0F8FF
 	--main-font-color: #AAB5C0;
 }
 
@@ -26,7 +26,7 @@ nav {
 	/*list-style-type: none; */
 	/*background-color: #778899;*/	/*lightslategray*/
 	/*font-weight: bold; */
-	text-align: right;
+	text-align: left;
 	border-top: 1px solid #000000;
 	border-left: 1px solid #000000;
 	border-right: 1px solid #000000;
@@ -49,7 +49,7 @@ nav {
 }
 
 .nav_element a:hover {
-	/*background-color: #708090;*/	/*slategray*/
+	background-color: #708090;	/*slategray*/
 }
 
 fieldset { 
@@ -61,6 +61,13 @@ fieldset {
     padding-right: 1em;
 /*    border: 2px groove (internal value);
 */}
+
+#frontPage{
+padding-top: 1em;
+    display: box;
+  flex-align: center;
+  flex-pack: center;
+}
 
 h1 {
 	font-size: 3em; 
@@ -118,6 +125,7 @@ a:hover {
 
 .section {
 	text-align: center;
+	color: var(main-font-color);
 	/*padding: 15px;*/	 	 
 }
 
