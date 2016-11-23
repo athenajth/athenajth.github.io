@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>Rubik's Cube Reference</title>
+<link rel=stylesheet type=text/css href="style.css">
+</head>
+
+<body>
+	<nav>
+		<a class="nav_element" href="index.html">Home</a>
+		<!-- <a class="nav_element" href="about.html"><u>About</u></a> -->
+		<a class="nav_element" href="projects.html">Projects</a>
+	</nav>
+
+	<div class="section"> <h3> 3x3 CFOP Method </h3>
+		<h4>1) Cross</h4>
+			I personally do a white cross on the bottom. 
+			Try to do cross on bottom for better lookahead and fingertricks
+		<h4>2) First Two Layers (F2L)</h4>
+			<h6>3 cases</h6>
+			Normal
+			Sledgehammer
+			white on top
+		<h4>3) Orientation of Last Layer (OLL)</h4>
+			<h5>2-Look OLL</h5>
+			<h6>Edge Orientation</h6>
+				<table>
+					<tr>
+						<th>Diagram</th>
+						<th>Algorithm</th>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/olle1.png" title="opposite"></td>
+						<td> F (R U R' U') F'</td>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/olle2.png" title="adjacent"></td>
+						<td> f (R U R' U') f'</td>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/olle3.png" title="none"></td>
+						<td>[F (R U R' U') F'] f (R U R' U') f'</td>
+					</tr>
+				</table>
+			<h6>Corner Orientation</h6>
+				<table>
+					<tr>
+						<th>Diagram</th>
+						<th>Algorithm</th>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/ollc1.gif" title="sune"></td>
+						<td>R U R' U R U2 R'</td>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/ollc2.gif" title="anti-sune"></td>
+						<td>R' U' R U' R' U2 R</td>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/ollc3.gif" title="car"></td>
+						<td>F (R U R' U') (R U R' U') (R U R' U') F'</td>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/ollc4.gif" title="blinker"></td>
+						<td>[f (R U R' U') f'] [F (R U R' U') F']</td>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/ollc5.gif" title="headlights"></td>
+						<td>(R2 D) (R' U2) (R D') (R' U2 R')</td>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/ollc6.gif" title="chameleon"></td>
+						<td>r U R' U' r' F R F'</td>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/ollc7.gif" title="bowtie"></td>
+						<td>F' r U R' U' r' F R </td>
+					</tr>
+				</table>
+				
+		<h4>4) Permutation of Last Layer (PLL)</h4>
+			<h5>2-Look PLL</h5>
+			<h6>Corner Permutation</h6>
+				<table>
+					<tr>
+						<th>Diagram</th>
+						<th>Algorithm</th>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/pllc1.gif" title="CW corner 3-cycle"></td>
+						<td>x [(R' U R') D2] [(R U' R') D2] R2</td>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/pllc2.gif" title="e-perm"></td>
+						<td> x'[(R U' R') D (R U R')] u2 [(R' U R) D (R' U' R)]</td>
+					</tr>
+				</table>
+			<h6>Edge Permutation</h6>
+				<table>
+					<tr>
+						<th>Diagram</th>
+						<th>Algorithm</th>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/plle1.gif" title="CW edge 3-cycle"></td>
+						<td>R2 U (R U R' U')(R' U')(R' U R')</td>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/plle2.gif" title="CCW edge 3-cycle"></td>
+						<td> [R U'][R U][R U][R U'] R' U' R2</td>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/plle3.gif" title="h-perm"></td>
+						<td> M2 U M2 U2 M2 U M2</td>
+					</tr>
+					<tr>
+						<td><img src="pictures/cubes/plle4.gif" title="z-perm"></td>
+						<td> M2 U M2 U M' U2 M2 U2 M' U2</td>
+					</tr>
+				</table>
+
+	</div>
+
+	<br>
+	<div class="section"> <h3> 4x4 Yau Method </h3>
+		
+	</div>
+
+</body>
+</html>
