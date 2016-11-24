@@ -7,6 +7,7 @@ function canvasApp()
 	var canvas = document.getElementById("gameCanvas");
 	var ctx = canvas.getContext("2d"); 
 
+	var ballRadius = 10; 
 	var x = canvas.width/2;
 	var y = canvas.height-30;
 	var dx = 1;
@@ -15,11 +16,37 @@ function canvasApp()
 	var gravitySpeed = 0; 
 	var bounce = 1; */
 
-	var ballRadius = 10; 
 
-		function drawBall()
-		{
-			ctx.beginPath();
+	//ball movement event handlers
+	var upPressed = false; 
+	var downPressed = false; 
+	var rightPressed = false; 
+	var leftPressed = false; 
+
+	function keyDownHandler(e) 
+	{
+		if(e.keyCode == 38) upPressed = true;
+		else if(e.keyCode == 40) downPressed = true;
+	    else if(e.keyCode == 39) rightPressed = true;
+	    else if(e.keyCode == 37) leftPressed = true;
+	}
+
+	function keyUpHandler(e) 
+	{
+	    if(e.keyCode == 38) upPressed = false;
+		else if(e.keyCode == 40) downPressed = false;
+	    else if(e.keyCode == 39) rightPressed = false;
+	    else if(e.keyCode == 37) leftPressed = false;
+	}
+
+	document.addEventListener("keydown", keyDownHandler, false);
+	document.addEventListener("keyup", keyUpHandler, false);
+
+
+	//draws ball on screen
+	function drawBall()
+	{
+		ctx.beginPath();
 
 		ctx.arc(x, y, ballRadius, 0, Math.PI*2);	//circle shape
 		ctx.fillStyle = "#FF0000";	
@@ -30,20 +57,31 @@ function canvasApp()
 		ctx.closePath();
 	}
 
+	//draws and updates canvas
 	function draw()
 	{
 		//clears canvas
-			ctx.clearRect(0, 0, canvas.width, canvas.height); 
+		ctx.clearRect(0, 0, canvas.width, canvas.height); 
 
-			drawBall(); 
+		drawBall(); 
 
-			//bounce off walls
-			if(x + dx > canvas.width - ballRadius || x + dx < ballRadius)
-				dx = -dx; 
-			if(y + dy > canvas.height - ballRadius || y + dy < ballRadius)
-				dy = -dy; 
+		//ball movement
+		if(upPressed && y - ballRadius > 0 ) 
+			y += 2;
+		else if(downPressed && x < canvas.height-ballRadius) 
+			y -= 2;
+		else if(rightPressed && x < canvas.width-ballRadius) 
+			x += 2;
+		else if(leftPressed && x - ballRadius > 0) 
+			x -= 2;
 
-			//obj movement
+		//bounce off walls
+		if(x + dx > canvas.width - ballRadius || x + dx < ballRadius)
+			dx = -dx; 
+		if(y + dy > canvas.height - ballRadius || y + dy < ballRadius)
+			dy = -dy; 
+
+		//obj movement
 		x += dx; 
 		y += dy; 
 	}
