@@ -6,11 +6,12 @@ function canvasApp()
 {
 	var canvas = document.getElementById("gameCanvas");
 	var ctx = canvas.getContext("2d"); 
+	canvas.tabIndex = 2; 
 
 	var ballRadius = 10; 
 	var x = canvas.width/2;
 	var y = canvas.height-30;
-	var dx = 1;
+	var dx = 0;
 	var dy = 2;
 	/*var gravity = 0.1; 
 	var gravitySpeed = 0; 
@@ -23,12 +24,14 @@ function canvasApp()
 	var rightPressed = false; 
 	var leftPressed = false; 
 
-	function keyDownHandler(e) 
+	function keyDownHandler(e) 	//e is short for event
 	{
 		if(e.keyCode == 38) upPressed = true;
 		else if(e.keyCode == 40) downPressed = true;
 	    else if(e.keyCode == 39) rightPressed = true;
 	    else if(e.keyCode == 37) leftPressed = true;
+
+	    e.preventDefault();
 	}
 
 	function keyUpHandler(e) 
@@ -67,13 +70,25 @@ function canvasApp()
 
 		//ball movement
 		if(upPressed && y - ballRadius > 0 ) 
-			y += 2;
-		else if(downPressed && x < canvas.height-ballRadius) 
+		{
 			y -= 2;
-		else if(rightPressed && x < canvas.width-ballRadius) 
+			dy = - Math.abs(dy); 
+		}
+		if(downPressed && x < canvas.height-ballRadius) 
+		{
+			y += 2;
+			dy = Math.abs(dy); 
+		}
+		if(rightPressed && x < canvas.width-ballRadius) 
+		{
 			x += 2;
-		else if(leftPressed && x - ballRadius > 0) 
+			dx = Math.abs(dx); 
+		}
+		if(leftPressed && x - ballRadius > 0) 
+		{
 			x -= 2;
+			dx = - Math.abs(dx); 
+		}
 
 		//bounce off walls
 		if(x + dx > canvas.width - ballRadius || x + dx < ballRadius)
