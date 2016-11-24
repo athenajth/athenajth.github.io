@@ -6,7 +6,8 @@ function canvasApp()
 {
 	var canvas = document.getElementById("gameCanvas");
 	var ctx = canvas.getContext("2d"); 
-	canvas.tabIndex = 2; 
+
+	canvas.tabIndex = 1; 
 
 	var ballRadius = 10; 
 	var x = canvas.width/2;
@@ -32,6 +33,7 @@ function canvasApp()
 	    else if(e.keyCode == 37) leftPressed = true;
 
 	    e.preventDefault();
+	    return false; 
 	}
 
 	function keyUpHandler(e) 
@@ -42,8 +44,8 @@ function canvasApp()
 	    else if(e.keyCode == 37) leftPressed = false;
 	}
 
-	document.addEventListener("keydown", keyDownHandler, false);
-	document.addEventListener("keyup", keyUpHandler, false);
+	canvas.addEventListener("keydown", keyDownHandler, false);
+	canvas.addEventListener("keyup", keyUpHandler, false);
 
 
 	//draws ball on screen
