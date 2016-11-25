@@ -11,12 +11,12 @@ function canvasApp()
 
 	var ballRadius = 10; 
 	var x = canvas.width/2;
-	var y = canvas.height-30;
+	var y = canvas.height/2; //canvas.height-30;
 	var dx = 0;
 	var dy = 2;
-	/*var gravity = 0.1; 
+	var gravity = 0.1; 
 	var gravitySpeed = 0; 
-	var bounce = 1; */
+	var bounce = .5; 
 
 
 	//ball movement event handlers
@@ -60,15 +60,6 @@ function canvasApp()
 		ctx.stroke();	
 
 		ctx.closePath();
-	}
-
-	//draws and updates canvas
-	function draw()
-	{
-		//clears canvas
-		ctx.clearRect(0, 0, canvas.width, canvas.height); 
-
-		drawBall(); 
 
 		//ball movement
 		if(upPressed && y - ballRadius > 0 ) 
@@ -98,9 +89,32 @@ function canvasApp()
 		if(y + dy > canvas.height - ballRadius || y + dy < ballRadius)
 			dy = -dy; 
 
+
+
+		//gravity and bouncing
+		gravitySpeed += gravity; 
+
 		//obj movement
 		x += dx; 
-		y += dy; 
+		y += dy + gravitySpeed; 
+
+		//bottom of screen
+		if(y > canvas.height - ballRadius)
+		{
+			y = canvas.height - ballRadius;
+			gravitySpeed = -(gravitySpeed * bounce); 
+		}
+	}
+
+	//draws and updates canvas
+	function draw()
+	{
+		//clears canvas
+		ctx.clearRect(0, 0, canvas.width, canvas.height); 
+
+		drawBall(); 
+
+		
 	}
 
 	setInterval(draw, 20); 
