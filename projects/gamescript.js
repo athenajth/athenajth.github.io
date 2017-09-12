@@ -12,7 +12,7 @@ function canvasApp()
 	var ballRadius = 10; 
 	var x = canvas.width/2;
 	var y = canvas.height/2; //canvas.height-30;
-	var dx = 0;
+	var dx = 1;
 	var dy = 2;
 	var gravity = 0.1; 
 	var gravitySpeed = 0; 
@@ -90,7 +90,6 @@ function canvasApp()
 			dy = -dy; 
 
 
-
 		//gravity and bouncing
 		gravitySpeed += gravity; 
 
@@ -106,6 +105,11 @@ function canvasApp()
 		}
 	}
 
+	function drawObstacles()
+	{
+		
+	}
+
 	//draws and updates canvas
 	function draw()
 	{
@@ -113,7 +117,7 @@ function canvasApp()
 		ctx.clearRect(0, 0, canvas.width, canvas.height); 
 
 		drawBall(); 
-
+		drawObstacles(); 
 		
 	}
 
