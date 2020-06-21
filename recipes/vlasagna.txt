@@ -44,7 +44,7 @@ Marinara sauce:
     5) simmer sauce until thickened to prefered texture, like an hour
 
 
-Veggies i like in my lasagna
+Veggies I like in my lasagna
   zucchini
   red bell pepper
   onions
@@ -54,10 +54,13 @@ Veggies i like in my lasagna
   roast the veggies that need to be roasted at 400 degree F, with olive oil, a little salt, pepper, italian herbs
 
 
-Lasagna order
+Lasagna: 
+  0) preheat oven to 375F
   1) some sauce on bottom of pan
   2) pasta
   3) veggies
   4) sauce...
   5) after last layer of noodles, add more sauce to top, before topping the monstrosity with mozzarella and parmesan cheese
+  6) bake with lid on for 30 mins
+  7) remove lid and bake for another 10 mins
   
