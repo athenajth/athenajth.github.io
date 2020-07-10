@@ -2,7 +2,7 @@ Taiwanese Sticky Rice (油飯)
 Microwavable version
 
 Ingredients: 
-1cup long glutinous rice
+1 cup long glutinous rice
 
 dried shrimp
 shitake mushrooms (sliced)
@@ -10,7 +10,7 @@ chinese sausage
 crispy dried shallots
 soy sauce
 
-Directions: 
+Steps: 
 1) wash and throughly drain glutinous rice. 
 2) add 1 cup of water to rice and soak for half a day (at least 3 hours)
 
@@ -18,6 +18,7 @@ Directions:
 4) add mixture into soaked rice
 5) cover and place into microwave for 3 minutes
 6) take bowl out and stir, before covering and microwaving for 3 more minutes
+
 
 Notes: 
 To scale up, 

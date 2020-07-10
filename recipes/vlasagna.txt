@@ -1,19 +1,14 @@
 Roasted Vegetable Lasagna
-  dish inspired by https://www.budgetbytes.com/roasted-vegetable-baked-ziti/ , but with homemade pasta and marinara sauce
-
 
 Lasagna pasta noodles: 
-  using half of this recipe: https://www.the-pasta-project.com/homemade-lasagne-pasta-sheets-lasagna/
-  using kitchenaid pasta roller: https://www.kitchenaid.com/content/dam/business-unit/kitchenaid/en-us/digital-assets/quickstart/ksmpra_ksmpca_ksmpsa/KSMPRA_Recipes.pdf
-
   Ingredients: 
     200g flour (APF is fine)
     2 large eggs
     pinch of salt
 
   Steps: 
-    1) make a mound of flour in bowl with a well in the center with a pinch of salt
-    2) break eggs in well, whisk eggs and slowly incorporate in flour until eggs are no longer runny
+    1) make a mound of flour (200g) in bowl with a well in the center with a pinch of salt
+    2) break 2 eggs in well, whisk eggs and slowly incorporate in flour until eggs are no longer runny
     3) bring rest of flour in to form large mass
     4) knead the dough with heel of hand for 7-10 minutes until pasta dough is "smooth, elastic, and just slightly tacky". 
     5) roll dough into ball, wrap in cling film, let sit for 30 mins
@@ -26,8 +21,6 @@ Lasagna pasta noodles:
 
 
 Marinara sauce: 
-  inspired by https://cooking.nytimes.com/recipes/1015987-classic-marinara-sauce
-
   Ingredients: 
     1 28-ounce canned tomatoes
     1/4cup extra-virgin olive oil
@@ -37,10 +30,10 @@ Marinara sauce:
     salt
 
   Steps
-    1) Crush tomatoes (easier in a bowl than in the can)
-    2) heat evoo in large skillet over medium heat, add garlic and onions when hot
+    1) Crush canned tomatoes (easier in a bowl than in the can)
+    2) heat 1/4 cup EVOO in large skillet over medium heat, add garlic and onions when hot
     3) as soon as sizzling, add italian herbs
-    4) add tomatoes and salt
+    4) add crushed tomatoes and salt
     5) simmer sauce until thickened to prefered texture, like an hour
 
 
@@ -64,3 +57,9 @@ Lasagna:
   6) bake with lid on for 30 mins
   7) remove lid and bake for another 10 mins
   
+
+Resources: 
+dish inspired by https://www.budgetbytes.com/roasted-vegetable-baked-ziti/ , but with homemade pasta and marinara sauce
+Marinara inspired by https://cooking.nytimes.com/recipes/1015987-classic-marinara-sauce
+Pasta using half of this recipe: https://www.the-pasta-project.com/homemade-lasagne-pasta-sheets-lasagna/
+using kitchenaid pasta roller: https://www.kitchenaid.com/content/dam/business-unit/kitchenaid/en-us/digital-assets/quickstart/ksmpra_ksmpca_ksmpsa/KSMPRA_Recipes.pdf
