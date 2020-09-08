@@ -125,6 +125,7 @@ a:-webkit-any-link {
 a:hover {
 	text-decoration: underline; 
 	font-weight: bold; 
+	cursor: pointer;
 }
 
 /*.side {
@@ -137,8 +138,8 @@ a:hover {
 }*/
 
 .section {
-	text-align: center;
-	color: var(main-font-color);
+/*	text-align: center;
+*/	color: var(main-font-color);
 	/*padding: 15px;*/	 	 
 	/*display: block;
     margin-left: 2px;
