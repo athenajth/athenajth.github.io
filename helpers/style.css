@@ -198,12 +198,29 @@ https://www.w3schools.com/howto/howto_css_portfolio_gallery.asp
   height: 100%;
   width: 100%;
   opacity: 50%;
-  /*transition: .5s ease;*/
+  transition: .5s ease;
   background-color: #505050;
 }
 
 .content:hover .overlay {
   opacity: 0;
+}
+
+.overlay_testb {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0%;
+  transition: .5s ease;
+  background-color: #505050;
+}
+
+.content:hover .overlay_testb {
+  opacity: .5;
 }
 
 .text {
